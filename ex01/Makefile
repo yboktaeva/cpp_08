@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/18 17:11:28 by yuboktae          #+#    #+#              #
-#    Updated: 2023/12/26 15:26:53 by yuboktae         ###   ########.fr        #
+#    Created: 2023/12/26 13:52:14 by yuboktae          #+#    #+#              #
+#    Updated: 2023/12/26 13:53:59 by yuboktae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = Span
 
 SRC_DIR = src/
 OBJ_DIR = obj/
 INC_DIR = includes/
 
-SRC_FILES = main.cpp
+SRC_FILES = main.cpp Span.cpp
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(patsubst $(SRC_DIR)%.cpp, $(OBJ_DIR)%.o, $(SRC))

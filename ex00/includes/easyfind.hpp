@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:26:47 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/12/21 15:47:29 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/12/26 16:42:58 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
 # define CYAN "\033[1;36m"
+# define YELLOW "\033[1;33m"
 
 # include <exception>
 # include <iostream>
+# include <algorithm>
 # include <vector>
 # include <list>
+# include <deque>
 
 class NotFoundException : public std::exception {
     public:
@@ -33,16 +36,11 @@ class NotFoundException : public std::exception {
 template<typename T>
 bool easyfind(T &container, int n)
 {
-    typename T::iterator it = container.begin();
-    typename T::iterator ite = container.end();
-
     if (container.empty())
         throw NotFoundException();
-    while (it != ite) {
-        if (*it == n)
-            return true;
-        it++;
-    }
+    typename T::iterator it = std::find(container.begin(), container.end(), n);
+    if (it != container.end())
+        return true;
     throw NotFoundException();
 }
 
