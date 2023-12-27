@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:26:47 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/12/26 16:42:58 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:22:47 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,16 @@
 # include <list>
 # include <deque>
 
-class NotFoundException : public std::exception {
-    public:
-    virtual const char *what() const throw() {
-        return "Not Found";
-    }
-};
-
 template<typename T>
-bool easyfind(T &container, int n)
+typename T::iterator easyfind(T &container, int n)
 {
+    typename T::iterator it;
     if (container.empty())
-        throw NotFoundException();
-    typename T::iterator it = std::find(container.begin(), container.end(), n);
+        throw std::range_error("Container is empty");
+    it = std::find(container.begin(), container.end(), n);
     if (it != container.end())
-        return true;
-    throw NotFoundException();
+        return it;
+    throw std::range_error("Not found");
 }
 
 #endif
