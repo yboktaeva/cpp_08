@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:27:02 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/12/27 21:23:53 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/12/28 11:48:29 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int main()
         std::cout << *it1 << std::endl;
         ++it1;
     }
-    //std::stack<int> s1(mstack1);
 
     std::cout << GREEN << "================ VECTOR ===============" << RESET << std::endl;
     std::vector<int> vec;
@@ -81,7 +80,6 @@ int main()
         std::cout << *it2 << std::endl;
         ++it2;
     }
-    //std::stack<int> s2(mstack2);
-    
+
     return 0;
 }
